@@ -1,14 +1,18 @@
+import dotenv from "dotenv";
+dotenv.config()
 import  Express  from "express";
 import mongoDb from "./db/dbConnection.js";
 import {join} from "path"
 import web from "./routes/web.js"
-
-const port=3000
+const MongodbUrl=process.env.MongodbUrl
+const port=process.env.PORT
 
 const app=Express()
 
 // mongoodb
-mongoDb()
+mongoDb(MongodbUrl)
+
+// dbConnection(MongodbUrl)
 
 app.use(Express.urlencoded({extended:false}))
 app.use(Express.json());
