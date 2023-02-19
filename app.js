@@ -5,7 +5,7 @@ import mongoDb from "./db/dbConnection.js";
 import {join} from "path"
 import web from "./routes/web.js"
 const MongodbUrl=process.env.MongodbUrl
-const port=process.env.PORT
+const port=process.env.PORT||3001
 
 const app=Express()
 
