@@ -1,13 +1,35 @@
 import mongoose from "mongoose";
 
-const mongoDb=async(MongodbUrl)=>{
-    try{
-        mongoose.connect(MongodbUrl)
-        console.log("DB connect successfully")
-    }
-    catch (error){
-        console.log("db not connect error")
-    }
+
+// const mongoDb =  () => {
+//     const MongodbUrl = ""
+//     mongoose.connect(MongodbUrl, {
+//         useNewUrlParser: true,
+//         // useCreateIndex:true,
+//         useUnifiedTopology: true,
+//         // useFindAndModify: false,
+//     }).then(() => {
+//         console.log("Connection successFull")
+//     }).catch(() => {
+//         console.log("No connected")
+
+//     })
+// }
+
+const mongoDb =  (MongodbUrl) => {
+     mongoose.connect(MongodbUrl, {
+        useNewUrlParser: true,
+        // useCreateIndex:true,
+        useUnifiedTopology: true,
+        // useFindAndModify: false,
+    }).then(() => {
+        console.log("Connection successFull")
+    }).catch(() => {
+        console.log("No connected")
+
+    })
 }
+
+
 
 export default mongoDb
